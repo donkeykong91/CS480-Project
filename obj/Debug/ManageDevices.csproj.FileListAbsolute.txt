@@ -1,0 +1,12 @@
+c:\users\walter\documents\visual studio 2015\Projects\ManageDevices\ManageDevices\bin\Debug\ManageDevices.exe.config
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\bin\Debug\ManageDevices.exe
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\bin\Debug\ManageDevices.pdb
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.csprojResolveAssemblyReference.cache
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Form2.resources
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Properties.Resources.resources
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.csproj.GenerateResource.Cache
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.exe
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.pdb
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Form3.resources
+C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Form4.resources
+C:\Users\Walter\documents\visual studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Main.resources
