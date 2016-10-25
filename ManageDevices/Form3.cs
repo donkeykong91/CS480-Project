@@ -27,7 +27,7 @@ namespace ManageDevices
             if (retyped != password) { label3.Visible = true; }
             else
             {
-                Form1 main = new ManageDevices.Form1();
+                Main main = new ManageDevices.Main();
                 main.Show();
                 this.Hide();
             }
@@ -45,10 +45,6 @@ namespace ManageDevices
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) 
-        {
-            textBox1.UseSystemPasswordChar = checkBox1.Checked == false;
-        }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -62,7 +58,7 @@ namespace ManageDevices
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label4_Click(object sender, EventArgs e)

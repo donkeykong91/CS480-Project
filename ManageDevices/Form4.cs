@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ManageDevices
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        Main f1;
+        public Form4(Main f1)
         {
+            this.f1 = f1;
             InitializeComponent();
         }
 
@@ -27,6 +30,15 @@ namespace ManageDevices
         private void button1_Click(object sender, EventArgs e)
         {
 
+            List<FileInfo> fl = (List<FileInfo>)f1.delSelected;
+
+            foreach (FileInfo fi in fl) { 
+           
+                fi.Delete();
+            }
+
+            this.Close();
+             
         }
     }
 }

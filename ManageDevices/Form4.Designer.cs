@@ -45,6 +45,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(76, 67);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -55,6 +56,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(210, 67);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -65,13 +67,19 @@
             // 
             // Form4
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 131);
+            this.CancelButton = this.button2;
+            this.ClientSize = new System.Drawing.Size(372, 114);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Location = new System.Drawing.Point(90, 90);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form4";
+            this.ShowIcon = false;
             this.Text = "Delete";
             this.ResumeLayout(false);
             this.PerformLayout();
