@@ -1,0 +1,9 @@
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\bin\Debug\diff.exe.config
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\bin\Debug\diff.exe
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\bin\Debug\diff.pdb
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\obj\Debug\diff.csprojResolveAssemblyReference.cache
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\obj\Debug\diff.Form1.resources
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\obj\Debug\diff.Properties.Resources.resources
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\obj\Debug\diff.csproj.GenerateResource.Cache
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\obj\Debug\diff.exe
+C:\Users\daryl\Desktop\Projects\visual_studio\c#\diff\diff\obj\Debug\diff.pdb
