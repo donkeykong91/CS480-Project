@@ -1,0 +1,12 @@
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Release\ManageDevices.exe.config
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Release\ManageDevices.exe
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Release\ManageDevices.pdb
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.Main.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.Form2.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.Form3.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.Form4.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.Properties.Resources.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.csproj.GenerateResource.Cache
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.exe
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.pdb

@@ -8,15 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Dolinay;
 
 namespace ManageDevices
 {
     public partial class Main : Form
     {
-        private const int WM_DEVICECHANGE = 0x219;
-        private const int DBT_DEVICEARRIVAL = 0x8000;
-        private const int DBT_DEVICEREMOVECOMPLETE = 0x8004;
-        private const int DBT_DEVICETYP_VOLUME = 0x00000002;
+        /* 
+           Pretty sure we can go ahead and remove this code,
+           DriveDetector can handle this better.
+        */
+
+        //private const int WM_DEVICECHANGE = 0x219;
+        //private const int DBT_DEVICEARRIVAL = 0x8000;
+        //private const int DBT_DEVICEREMOVECOMPLETE = 0x8004;
+        //private const int DBT_DEVICETYP_VOLUME = 0x00000002;
 
         /*
         protected override void WndProc(ref Message m)
@@ -39,6 +45,18 @@ namespace ManageDevices
             }
         }
         */
+
+        /*
+            DriveDetector is an open source class written to handle notifications
+            about drive insertion/removal. It also provides infromation about the inserted
+            drive. Good stuff!
+            More info here: http://www.codeproject.com/Articles/18062/Detecting-USB-Drive-Removal-in-a-C-Program
+        */
+        private DriveDetector driveDetector = null;
+        private String arrivalMessage = "";
+        private String removalMessage = "";
+        private String driveLetter = "";
+        
         public Main()
         {
             InitializeComponent();
@@ -71,7 +89,62 @@ namespace ManageDevices
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             */
+
+            /* --THIS IS A TEST OF THE DriveDetector CLASS-- */
+            driveDetector = new DriveDetector();
+            driveDetector.DeviceArrived += new DriveDetectorEventHandler(
+            OnDriveArrived);
+            driveDetector.DeviceRemoved += new DriveDetectorEventHandler(
+                OnDriveRemoved);
+            driveDetector.QueryRemove += new DriveDetectorEventHandler(
+                OnQueryRemove);
         }
+
+        /* --THIS IS A TEST OF THE DriveDetector CLASS-- */
+
+        // Called by DriveDetector when removable device in inserted
+        private void OnDriveArrived(object sender, DriveDetectorEventArgs e)
+        {
+            // e.Drive is the drive letter, e.g. "E:\\"
+            // If you want to be notified when drive is being removed (and be
+            // able to cancel it),
+            // set HookQueryRemove to true
+            e.HookQueryRemove = false;
+
+            arrivalMessage = "Device " + e.Drive + " Connected";
+            driveLetter = e.Drive;
+            //Clear the listbox of previous message
+            if (listBox1.Items.Contains(removalMessage))
+            {
+                listBox1.Items.Remove(removalMessage);
+            }
+            listBox1.Items.Add(arrivalMessage);
+        }
+
+        // Called by DriveDetector after removable device has been unplugged
+        private void OnDriveRemoved(object sender, DriveDetectorEventArgs e)
+        {
+            // TODO: do clean up here, etc. Letter of the removed drive is in
+            // e.Drive;
+            removalMessage = "Device " + e.Drive + " Removed";
+            driveLetter = "";
+            listBox1.Items.Remove(arrivalMessage);
+            listBox1.Items.Add(removalMessage);
+        }
+
+        // Called by DriveDetector when removable drive is about to be removed
+        private void OnQueryRemove(object sender, DriveDetectorEventArgs e)
+        {
+            // Should we allow the drive to be unplugged?
+            if (MessageBox.Show("Allow remove?", "Query remove",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                    DialogResult.Yes)
+                e.Cancel = false;        // Allow removal
+            else
+                e.Cancel = true;         // Cancel the removal of the device
+        }
+
+        /* --THIS IS A TEST OF THE DriveDetector CLASS-- */
 
         private void GetDirectories(DirectoryInfo[] subDirs, TreeNode nodeToAddTo)
         {
