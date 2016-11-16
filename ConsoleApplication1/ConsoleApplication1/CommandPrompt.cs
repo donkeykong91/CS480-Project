@@ -261,15 +261,13 @@ namespace FileHandlerTest
         {
             try
             {
-                StreamWriter writer = new StreamWriter(savePathDirectory);
-                foreach (String s in paths)
+                using(StreamWriter writer = File.AppendText(savePathDirectory))
                 {
-                    if (File.Exists(s))
+                    foreach (String s in paths)
                     {
                         writer.WriteLine(s);
-                    }                    
-                }
-                writer.Close();
+                    }
+                }                                       
 
                 return "List saved.";
             }
