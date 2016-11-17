@@ -119,6 +119,7 @@ namespace ManageDevices
                 listBox1.Items.Remove(removalMessage);
             }
             listBox1.Items.Add(arrivalMessage);
+            addToTree(driveLetter);
         }
 
         // Called by DriveDetector after removable device has been unplugged
@@ -126,10 +127,13 @@ namespace ManageDevices
         {
             // TODO: do clean up here, etc. Letter of the removed drive is in
             // e.Drive;
+            RemoveFromTree(driveLetter);
+            treeView1.Update();
             removalMessage = "Device " + e.Drive + " Removed";
             driveLetter = "";
-            listBox1.Items.Remove(arrivalMessage);
-            listBox1.Items.Add(removalMessage);
+            listBox1.Items.Clear();
+            listBox1.Items.Add(removalMessage);                        
+            //listBox1.Update();
         }
 
         // Called by DriveDetector when removable drive is about to be removed
@@ -180,11 +184,25 @@ namespace ManageDevices
         // Delete button
         private void button3_Click(object sender, EventArgs e)
         {
-            Form4 del = new ManageDevices.Form4(this); // Added this to form4
-            del.Show();
-            listBox1.Update();
-            
+            //Form4 del = new ManageDevices.Form4(this); // Added this to form4
+            //del.Show();
+            String caption = "Delete File";
+            String message = "Are you sure you want to delete this file(s)?";
+            DialogResult result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
 
+            if (result == DialogResult.Yes)
+            {
+                foreach(FileInfo fi in (List<FileInfo>)delSelected)
+                {
+                    fi.Delete();
+                }
+                for (int x = listBox1.SelectedIndices.Count - 1; x >= 0; x--)
+                {
+                    int idx = listBox1.SelectedIndices[x];
+                    listBox1.Items.RemoveAt(idx);
+                }
+                listBox1.Update();
+            }                                    
         }
 
 
@@ -207,6 +225,20 @@ namespace ManageDevices
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
+        }
+
+        /// <summary>
+        /// This method should remove a node 's' from the treeview.
+        /// </summary>
+        /// <param name="s"></param>
+        private void RemoveFromTree(string s)
+        {
+            foreach(TreeNode t in treeView1.Nodes)
+            {
+                if (t.Text == s){
+                    treeView1.Nodes.Remove(t);
+                }
+            }
         }
 
         private void addToTree(string s)

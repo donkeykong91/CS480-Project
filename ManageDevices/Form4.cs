@@ -13,7 +13,8 @@ namespace ManageDevices
 {
     public partial class Form4 : Form
     {
-        Main f1;
+        Main f1;        
+        
         public Form4(Main f1)
         {
             this.f1 = f1;
@@ -22,14 +23,13 @@ namespace ManageDevices
 
         // For the 'No' button
         private void button2_Click(object sender, EventArgs e)
-        {
+        {            
             this.Close();
         }
 
         // For the 'Yes' button
         private void button1_Click(object sender, EventArgs e)
-        {
-
+        {           
             List<FileInfo> fl = (List<FileInfo>)f1.delSelected;
 
             foreach (FileInfo fi in fl) { 
