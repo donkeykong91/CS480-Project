@@ -4,3 +4,9 @@ c:\users\mike\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleA
 c:\users\mike\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\FIle_Handler_Test.csprojResolveAssemblyReference.cache
 c:\users\mike\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 c:\users\mike\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ConsoleApplication1\ConsoleApplication1\obj\Debug\FIle_Handler_Test.csprojResolveAssemblyReference.cache
