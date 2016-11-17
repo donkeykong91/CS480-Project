@@ -10,3 +10,6 @@ C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevice
 C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Form3.resources
 C:\Users\Walter\Documents\Visual Studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Form4.resources
 C:\Users\Walter\documents\visual studio 2015\Projects\ManageDevices\ManageDevices\obj\Debug\ManageDevices.Main.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Debug\ManageDevices.exe.config
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.exe
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.pdb

@@ -18,7 +18,7 @@ namespace ManageDevices
         private const int DBT_DEVICEREMOVECOMPLETE = 0x8004;
         private const int DBT_DEVICETYP_VOLUME = 0x00000002;
 
-        /*
+        
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -38,7 +38,7 @@ namespace ManageDevices
                     break;
             }
         }
-        */
+        
         public Main()
         {
             InitializeComponent();
