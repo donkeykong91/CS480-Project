@@ -178,7 +178,7 @@ namespace ManageDevices
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 frm = new ManageDevices.Form2(this);
-            frm.Show();
+            frm.ShowDialog();
         }
 
         // Delete button
