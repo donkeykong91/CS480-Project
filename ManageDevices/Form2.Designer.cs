@@ -76,6 +76,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ShowIcon = false;
             this.TransparencyKey = System.Drawing.Color.White;
             this.ResumeLayout(false);
