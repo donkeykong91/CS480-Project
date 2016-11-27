@@ -180,10 +180,23 @@ namespace ManageDevices
             //Form2 frm = new ManageDevices.Form2(this);
             //frm.ShowDialog();
             String filename = "files.txt";
-            String caption = "Add File";
-            String message = "File(s) don't match. \nWould you like to create a new file(s)?";
+            String caption, message;
+            DialogResult result;
+            // Checks if flash drive is in
+            if (Directory.Exists(driveLetter))
+            {
+                caption = "Add File";
+                message = "File(s) don't match. \nWould you like to create a new file(s)?";
+                result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
+            }
+            // If no flash drive then error message is given so drive can be inserted first before adding
+            else
+            {
+                caption = "Error";
+                message = "Error! No Flash Drive found. \nFlash Drive required before trying to add files to it."
+                result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
+            }
             
-            DialogResult result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 foreach (FileInfo fi in (List<FileInfo>)delSelected)
@@ -192,10 +205,29 @@ namespace ManageDevices
                     using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename), true))
                     {
                         sw.WriteLine(fi.ToString());
+                        //Check if file is already present in flash drive, if not then adds it to flash drive
+                        if (searchFlashDrive(fi) == false) 
+                        {
+                            File.Copy(Path.Combine(fi.Directory.FullName, fi.ToString()), Path.Combine(driveLetter, fi.ToString()), true);
+                        }
                     }
                 }
             }
             listBox1.Update();
+        }
+        
+        // Search Flash Drive for a File
+        private Boolean searchFlashDrive(FileInfo fi)
+        {
+            DirectoryInfo dri = new DirectoryInfo(driveLetter);
+            foreach (FileInfo f in dri.GetFiles())
+            {
+                if (f == fi)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         // Delete button
