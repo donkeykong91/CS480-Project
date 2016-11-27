@@ -193,7 +193,7 @@ namespace ManageDevices
             else
             {
                 caption = "Error";
-                message = "Error! No Flash Drive found. \nFlash Drive required before trying to add files to it."
+                message = "Error! No Flash Drive found. \nFlash Drive required before trying to add files to it.";
                 result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
             }
             
