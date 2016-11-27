@@ -177,8 +177,25 @@ namespace ManageDevices
         // Add button
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 frm = new ManageDevices.Form2(this);
-            frm.ShowDialog();
+            //Form2 frm = new ManageDevices.Form2(this);
+            //frm.ShowDialog();
+            String filename = "files.txt";
+            String caption = "Add File";
+            String message = "File(s) don't match. \nWould you like to create a new file(s)?";
+            
+            DialogResult result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                foreach (FileInfo fi in (List<FileInfo>)delSelected)
+                {
+                    //Writes files to be added to a text file that can be read from later.
+                    using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename), true))
+                    {
+                        sw.WriteLine(fi.ToString());
+                    }
+                }
+            }
+            listBox1.Update();
         }
 
         // Delete button
