@@ -13,3 +13,27 @@ C:\Users\Walter\documents\visual studio 2015\Projects\ManageDevices\ManageDevice
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Debug\ManageDevices.exe.config
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.exe
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.pdb
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\bin\Debug\ManageDevices.exe.config
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.exe
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.pdb
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\bin\Debug\ManageDevices.exe
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\bin\Debug\ManageDevices.pdb
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.csprojResolveAssemblyReference.cache
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Main.resources
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Form2.resources
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Form3.resources
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Form4.resources
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Properties.Resources.resources
+C:\Users\daryl\Downloads\CS480-Project-master\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.csproj.GenerateResource.Cache
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\bin\Debug\ManageDevices.exe.config
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.exe
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.pdb
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\bin\Debug\ManageDevices.exe
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\bin\Debug\ManageDevices.pdb
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.csprojResolveAssemblyReference.cache
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Main.resources
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Form2.resources
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Form3.resources
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Form4.resources
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.Properties.Resources.resources
+C:\Users\daryl\Desktop\CS480-Project-master\ManageDevices\obj\Debug\ManageDevices.csproj.GenerateResource.Cache
