@@ -33,7 +33,14 @@ namespace ManageDevices
             List<FileInfo> fl = (List<FileInfo>)form1.selected;
 
             foreach (FileInfo fi in fl)
-            {
+            {   
+                if(Directory.GetDirectoryRoot(fi.DirectoryName) == form1.getDriveLetter)
+                {
+                    String caption = "Error";
+                    String message = "Error! File(s) selected is already in " + form1.getDriveLetter;
+                    DialogResult result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
+                    break;
+                }
                 //Writes files to be added to a text file that can be read from later.
                 using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename), true))
                 {

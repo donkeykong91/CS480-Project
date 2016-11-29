@@ -248,16 +248,15 @@ namespace ManageDevices
         // Add button
         private void button2_Click(object sender, EventArgs e)
         {
-            String caption, message;
-            DialogResult result;
+            List<FileInfo> fl = (List<FileInfo>)selected;
             // If no flash drive then error message is given so drive can be inserted first before adding
             if (!Directory.Exists(driveLetter))
             {
-                caption = "Error";
-                message = "Error! No Flash Drive found. \nFlash Drive required before trying to add files to it.";
-                result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
+                String caption = "Error";
+                String message = "Error! No Flash Drive found. \nFlash Drive required before trying to add files to it.";
+                DialogResult result = MessageBox.Show(message, caption, MessageBoxButtons.OK);
             }
-            // Else it'll open the Add File form (Form2)
+            // Else calls on form2 to add Files
             else
             {
                 Form2 frm = new ManageDevices.Form2(this);
