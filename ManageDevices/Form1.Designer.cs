@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.button4 = new System.Windows.Forms.Button();
+            this.trayIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.autoUpdate = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // button1
@@ -87,6 +90,7 @@
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "Auto-Update";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // listBox1
             // 
@@ -115,6 +119,19 @@
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            //
+            // trayIcon
+            //
+            this.trayIcon.BalloonTipText = "Files will now be automatically updated";
+            this.trayIcon.BalloonTipTitle = "Auto-Update Enabled";
+            this.trayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("trayIcon.Icon")));
+            this.trayIcon.Text = "Manage Devices";
+            this.trayIcon.Visible = true;
+            this.trayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.trayIcon_MouseDoubleClick);
+            //
+            // autoUpdate
+            //
+            this.autoUpdate.DoWork += new System.ComponentModel.DoWorkEventHandler(this.autoUpdate_DoWork);
             // 
             // Main
             // 
@@ -151,5 +168,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.NotifyIcon trayIcon;
+        private System.ComponentModel.BackgroundWorker autoUpdate;
     }
 }
