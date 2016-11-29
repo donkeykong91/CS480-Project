@@ -30,6 +30,7 @@ namespace ManageDevices
         public Main()
         {
             InitializeComponent();
+            button1.Hide();
             /*
             try
             {
@@ -365,6 +366,11 @@ namespace ManageDevices
         // To get the files from within a folder and display in the listbox
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            //Disable dangerous buttons when directory is selected.
+            button3.Enabled = false;
+            button2.Enabled = false;
+            button4.Enabled = false;
+
             listBox1.Items.Clear();
             DirectoryInfo dir = (DirectoryInfo)treeView1.SelectedNode.Tag;
             FileInfo[] fInfo = dir.GetFiles();
@@ -381,6 +387,13 @@ namespace ManageDevices
 
         // returns DriveLetter
         public String getDriveLetter { get { return driveLetter; } }
+
+        //Returns the selected file in the listbox,
+        //make sure to cast to a FileInfo
+        public object selectedFile
+        {
+            get { return listBox1.SelectedItem; }
+        }
 
         //method to pass files that are selected
         public object selected
@@ -400,16 +413,40 @@ namespace ManageDevices
 
         }
 
-        //Update Button
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Re-enable funcitonal buttons for file management.
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+
+            //Clear selected node in the tree view 
+            //(so _AfterSelect event can trigger again)
+            treeView1.SelectedNode = null;
+        }
+
+        //Sync button
         private void button4_Click(object sender, EventArgs e)
         {
+            button4.Hide();
             // Compare the two files that referenced in the textbox controls.
-            string fileName = (new FileInfo(listBox1.GetItemText(listBox1.SelectedItem))).Name;
+            FileInfo baseFile = (FileInfo)selectedFile;
+            string fileName = baseFile.Name;
             string file1 = driveLetter + fileName;
-            string file2 = searchFileName(fileName);
-            if (string.IsNullOrEmpty(file2))
+            string file2 = searchFileName(baseFile.Name);
+
+            if (baseFile == null)
             {
-                MessageBox.Show(fileName + " does not exist.");
+                MessageBox.Show("Please select a file to sync.");
+            }
+
+            if (!searchFlashDrive(baseFile))
+            {
+                MessageBox.Show(fileName + " does not exist.\n"
+                                 + "Adding file to usb.");
+                //If the file does not exist in the flashdrive
+                //add it to the flashdrive.
+                File.Copy(baseFile.FullName, driveLetter + baseFile.Name);
             }
             else
             {
@@ -423,6 +460,30 @@ namespace ManageDevices
                 }
             }
         }
+
+        ////Sync Button
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    // Compare the two files that referenced in the textbox controls.
+        //    string fileName = (new FileInfo(listBox1.GetItemText(listBox1.SelectedItem))).Name;
+        //    string file1 = driveLetter + fileName;
+        //    string file2 = searchFileName(fileName);
+        //    if (string.IsNullOrEmpty(file2))
+        //    {
+        //        MessageBox.Show(fileName + " does not exist.");
+        //    }
+        //    else
+        //    {
+        //        if (FileCompare(file1, file2))
+        //        {
+        //            MessageBox.Show(fileName + " is synced.");
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show(syncFile(file1, file2));
+        //        }
+        //    }
+        //}
 
         //Returns to see if the Auto-Update check mark is selected or not
         public bool OptionSelected
