@@ -30,15 +30,30 @@ namespace ManageDevices
         // For the 'Yes' button
         private void button1_Click(object sender, EventArgs e)
         {           
-            List<FileInfo> fl = (List<FileInfo>)f1.delSelected;
 
-            foreach (FileInfo fi in fl) { 
-           
+            List<FileInfo> fl = (List<FileInfo>)f1.selected;
+            // Deletes each file that was selected from Computer
+            foreach (FileInfo fi in fl) {    
                 fi.Delete();
             }
 
+            // Removes the files selected from ListBox
+            for (int x = f1.getList.SelectedIndices.Count - 1; x >= 0; x--)
+            {
+                int idx = f1.getList.SelectedIndices[x];      
+                f1.getList.Items.RemoveAt(idx);
+            }
+
+            // Updates listbox
+            f1.getList.Update();                                
             this.Close();
-             
+
+        }
+
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,8 +29,24 @@ namespace ManageDevices
         //For the 'Yes' button
         private void button1_Click(object sender, EventArgs e)
         {
-            DirectoryInfo dir = (DirectoryInfo)form1.treeView1.SelectedNode.Tag;
-            File.WriteAllText(Path.Combine(dir.FullName, "test1234.txt"), "Testing");
+            String filename = "files.txt";
+            List<FileInfo> fl = (List<FileInfo>)form1.selected;
+
+            foreach (FileInfo fi in fl)
+            {
+                //Writes files to be added to a text file that can be read from later.
+                using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename), true))
+                {
+                    sw.WriteLine(fi.ToString());
+                    //Check if file is already present in flash drive, if not then adds it to flash drive
+                    if (form1.searchFlashDrive(fi) == false)
+                    {
+                        File.Copy(Path.Combine(fi.Directory.FullName, fi.ToString()), Path.Combine(form1.getDriveLetter, fi.ToString()), true);
+                    }
+                }
+            }
+            // Updates listbox in Main
+            form1.getList.Update();
             this.Close();
         }
     }
