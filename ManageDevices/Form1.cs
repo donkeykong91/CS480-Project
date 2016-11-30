@@ -73,7 +73,7 @@ namespace ManageDevices
 
         private string syncFile(string file1, string file2)
         {
-            File.Copy(file1, file2, true);
+            File.Copy(file2, file1, true);
             return "Finished sync.";
         }
 
@@ -433,8 +433,7 @@ namespace ManageDevices
                 MessageBox.Show("No external drive detected.\n"
                                 + "Please insert an external drive.");
                 return;
-            }
-            //button4.Hide();
+            }            
             // Compare the two files that referenced in the textbox controls.
             FileInfo baseFile = (FileInfo)selectedFile;
             //Make sure the user has selected a file.
@@ -552,7 +551,7 @@ namespace ManageDevices
                     trayIcon.ShowBalloonTip(5, "Auto-Update", "Files synced and up to date", new ToolTipIcon());
                 }
                 file.Close();
-                Thread.Sleep(30000);
+                Thread.Sleep(10000);
             }
         }
     }
