@@ -27,10 +27,16 @@ namespace ManageDevices
         private String removalMessage = "";
         private String driveLetter = "";
         private String filename = "files.txt";
+        private String listOfFilesToSync;
         public Main()
         {
             InitializeComponent();
             button1.Hide();
+            listOfFilesToSync = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename).ToString();
+            if (!File.Exists(listOfFilesToSync))
+            {
+                File.Create(listOfFilesToSync);
+            }
             /*
             try
             {
@@ -458,7 +464,12 @@ namespace ManageDevices
                                  + "Adding file to usb.");
                 //If the file does not exist in the flashdrive
                 //add it to the flashdrive.
-                File.Copy(baseFile.FullName, driveLetter + baseFile.Name);
+                File.Copy(baseFile.FullName, driveLetter + baseFile.Name, true);
+
+                //Writes files to be added to a text file that can be read from later.
+                StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename).ToString());
+                sw.WriteLine(baseFile.FullName);
+                sw.Close();                
             }
             else
             {
@@ -525,11 +536,18 @@ namespace ManageDevices
                 while ((line = file.ReadLine()) != null)
                 {
                     file1 = searchFileName(line);
-                    file2 = getDriveLetter + line;
+                    String[] tokens = file1.Split('\\');
+                    file2 = getDriveLetter + tokens[tokens.Length - 1];
+                    //Console.WriteLine(file2);
                     //If the file is found and the flash drive is inserted the files are synced
                     if (file1 != "" && isFlashDriveInserted())
                     {
-                        syncFile(file1, file2);
+                        if (!FileCompare(file1, file2))
+                        {
+                            File.Copy(file1, file2, true);
+                            //syncFile(file1, file2);
+                        }                        
+                        //syncFile(file1, file2);
                     }
                     //If no flash drive is found then gives error message and marks the boolean as true
                     else if (!isFlashDriveInserted())
@@ -551,7 +569,7 @@ namespace ManageDevices
                     trayIcon.ShowBalloonTip(5, "Auto-Update", "Files synced and up to date", new ToolTipIcon());
                 }
                 file.Close();
-                Thread.Sleep(10000);
+                Thread.Sleep(5000);
             }
         }
     }

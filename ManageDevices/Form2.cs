@@ -15,12 +15,15 @@ namespace ManageDevices
     {
         String filename = "files.txt";
         Main form1;
+        static String fullFileName;
         public Form2(Main form_1)
         {
-            if (!File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename)))
-            {
-                File.Create(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename).ToString());
-            }
+            //if (!File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename)))
+            //{
+            //    //Create file in case it doesn't exist.           
+            //    File.Create(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename).ToString());
+            //    fullFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename).ToString();
+            //}
             InitializeComponent();            
             form1 = form_1;
         }
@@ -81,6 +84,11 @@ namespace ManageDevices
             // Updates listbox in Main
             form1.getList.Update();
             this.Close();
+        }
+
+        public static String GetFileName()
+        {
+            return fullFileName;
         }
     }
 }
