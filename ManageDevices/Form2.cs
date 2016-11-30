@@ -17,7 +17,11 @@ namespace ManageDevices
         Main form1;
         public Form2(Main form_1)
         {
-            InitializeComponent();
+            if (!File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename)))
+            {
+                File.Create(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename).ToString());
+            }
+            InitializeComponent();            
             form1 = form_1;
         }
 

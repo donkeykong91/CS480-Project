@@ -10,3 +10,4 @@ C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.csproj.GenerateResource.Cache
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.exe
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.pdb
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Release\ManageDevices.Icons.resources

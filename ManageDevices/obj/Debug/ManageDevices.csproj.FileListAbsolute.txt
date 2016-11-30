@@ -49,3 +49,13 @@ C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\Garbriel's-Cod
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\Garbriel's-Code\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Form4.resources
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\Garbriel's-Code\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Properties.Resources.resources
 C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\Garbriel's-Code\CS480-Project\ManageDevices\obj\Debug\ManageDevices.csproj.GenerateResource.Cache
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Debug\ManageDevices.exe
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\bin\Debug\ManageDevices.pdb
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.csprojResolveAssemblyReference.cache
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Main.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Form2.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Form3.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Form4.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Icons.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.Properties.Resources.resources
+C:\Users\Mike\Documents\School Folder\CS 480 Software Engineering\CS480-Project\ManageDevices\obj\Debug\ManageDevices.csproj.GenerateResource.Cache

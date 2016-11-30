@@ -277,7 +277,7 @@ namespace ManageDevices
             DirectoryInfo dri = new DirectoryInfo(driveLetter);
             foreach (FileInfo f in dri.GetFiles())
             {
-                if (f == fi)
+                if (f.Name == fi.Name)
                 {
                     return true;
                 }
@@ -428,17 +428,30 @@ namespace ManageDevices
         //Sync button
         private void button4_Click(object sender, EventArgs e)
         {
-            button4.Hide();
+            if (getDriveLetter.Length == 0)
+            {
+                MessageBox.Show("No external drive detected.\n"
+                                + "Please insert an external drive.");
+                return;
+            }
+            //button4.Hide();
             // Compare the two files that referenced in the textbox controls.
             FileInfo baseFile = (FileInfo)selectedFile;
-            string fileName = baseFile.Name;
-            string file1 = driveLetter + fileName;
-            string file2 = searchFileName(baseFile.Name);
-
+            //Make sure the user has selected a file.
             if (baseFile == null)
             {
                 MessageBox.Show("Please select a file to sync.");
+                return;
             }
+            //Make sure the user hasn't selected files inside the external drive.
+            //if(baseFile.Directory.Name == getDriveLetter)
+            //{
+
+            //}
+            string fileName = baseFile.Name;
+            string file1 = driveLetter + fileName;
+            //string file2 = searchFileName(baseFile.Name);
+            string file2 = baseFile.FullName;            
 
             if (!searchFlashDrive(baseFile))
             {
@@ -460,30 +473,6 @@ namespace ManageDevices
                 }
             }
         }
-
-        ////Sync Button
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    // Compare the two files that referenced in the textbox controls.
-        //    string fileName = (new FileInfo(listBox1.GetItemText(listBox1.SelectedItem))).Name;
-        //    string file1 = driveLetter + fileName;
-        //    string file2 = searchFileName(fileName);
-        //    if (string.IsNullOrEmpty(file2))
-        //    {
-        //        MessageBox.Show(fileName + " does not exist.");
-        //    }
-        //    else
-        //    {
-        //        if (FileCompare(file1, file2))
-        //        {
-        //            MessageBox.Show(fileName + " is synced.");
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show(syncFile(file1, file2));
-        //        }
-        //    }
-        //}
 
         //Returns to see if the Auto-Update check mark is selected or not
         public bool OptionSelected
